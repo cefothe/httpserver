@@ -83,7 +83,7 @@ void doprocessing(int sock)
     
     //Read information from request
     while ((read_size = recv(sock, requests, 2000, 0)) > 0) {
-       printf("%s \n\r",requests);
+       //printf("%s \n\r",requests);
        
        // Parse http method 
         if(HelperFunction::getHTTPMethod(requests)=="GET"){

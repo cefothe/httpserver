@@ -41,3 +41,17 @@ string HelperFunction::lastRow(char* request, char separater){
   return to;
 
 }
+
+string HelperFunction::splitExtension(string fileName){
+    std::string filename(fileName);
+    std::string::size_type idx;
+
+    idx = filename.rfind('.');
+    
+    std::string extension ;
+    if(idx != std::string::npos)
+    {
+        extension = filename.substr(idx+1);
+    }
+return extension;
+}

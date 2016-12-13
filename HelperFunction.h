@@ -28,6 +28,7 @@ public:
     static string split(char *request, int number, char separater);
     static string getHTTPMethod(char* requests);
     static string lastRow(char *request, char separater);
+    static string splitExtension(string fileName);
 };
 
 #endif /* HELPERFUNCTION_H */
