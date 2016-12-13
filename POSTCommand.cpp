@@ -24,8 +24,8 @@ void POSTCommand::execute(int sock) {
    
     string parametars = HelperFunction::lastRow(request,'\n');
     const char* fileInformationChar = parametars.c_str();
-    printf("\n\r ------ \n\r %s \n\r ------ \n\r",fileInformationChar );
- sprintf(response, "HTTP/1.1 200\r\n"
+    
+ sprintf(response, "HTTP/1.1 202\r\n"
                           "Content-Type: text/html; charset=UTF-8\r\n"
                           "Content-Length: %d\r\n"
                           "\r\n"

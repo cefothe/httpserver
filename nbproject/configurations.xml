@@ -7,7 +7,6 @@
       <itemPath>Command.h</itemPath>
       <itemPath>GETCommand.h</itemPath>
       <itemPath>HelperFunction.h</itemPath>
-      <itemPath>OPTIONSCommand.h</itemPath>
       <itemPath>POSTCommand.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -20,7 +19,6 @@
       <itemPath>Command.cpp</itemPath>
       <itemPath>GETCommand.cpp</itemPath>
       <itemPath>HelperFunction.cpp</itemPath>
-      <itemPath>OPTIONSCommand.cpp</itemPath>
       <itemPath>POSTCommand.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -57,10 +55,6 @@
       <item path="HelperFunction.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="HelperFunction.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="OPTIONSCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="OPTIONSCommand.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="POSTCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -100,10 +94,6 @@
       <item path="HelperFunction.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="HelperFunction.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="OPTIONSCommand.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="OPTIONSCommand.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="POSTCommand.cpp" ex="false" tool="1" flavor2="0">
       </item>

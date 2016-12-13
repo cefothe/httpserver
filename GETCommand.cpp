@@ -18,11 +18,9 @@ using namespace std;
 void GETCommand::execute(int sock) {
     char* response;
     char* contentType;
-    char * data;
-    int size = 0;
-    
-    //Set all element in contentType to '\0'
-    memset(contentType,'\0',50);
+    char * data ='\0';
+    int size=0;
+     
   
     std::string firstLine= HelperFunction::split(request,0,'\n');
     char* result = strcpy((char*)malloc(firstLine.length()+1), firstLine.c_str());
@@ -32,40 +30,39 @@ void GETCommand::execute(int sock) {
     
     std::ostringstream sstream;
     std::ifstream fs(("/home/cefothe/NetBeansProjects/httpServer/files"+fileName).c_str(),std::ios::in | std::ios::binary | std::ios::ate);
-   
-      cout<< "sddsad";
-    // Check if file exist
     if(fs){
        statusCode=200;
        sstream << fs.rdbuf();
-        cout<< "bbbbbbbbbbbbbbbbb";
-       if(HelperFunction::splitExtension(fileName)=="png"){
-           contentType="image/png";
-           cout<< "aaaaaaaaa";
-       }else if(HelperFunction::splitExtension(fileName)=="html"){
-           contentType="text/html"; 
+       cout<< HelperFunction::splitExtension(fileName);
+       if(HelperFunction::splitExtension(fileName).compare("png") == 0){
+           contentType = "image/png";
+       }else 
+       if(HelperFunction::splitExtension(fileName).compare("html") == 0){
+           contentType = "text/html";
        }else{
-           statusCode= 405;
+       statusCode=405;
+       
        }
        
-        fs.seekg( 0, std::ios::end );
-        size = fs.tellg();
-        fs.seekg( 0, std::ios::beg );
-
-        data = new char[ size + 1 ];
-        fs.read( data, size );
-        data[ size ] = '\0';
-        
     }
-
     
- response = (char *) malloc(400);
+    if(statusCode !=405 && statusCode != 404){
+       fs.seekg( 0, std::ios::end );
+       size = fs.tellg();
+       fs.seekg( 0, std::ios::beg );
+
+       data= new char[ size + 1 ];
+       fs.read( data, size );
+       data[ size ] = '\0';
+    }
+   
+    response = (char *) malloc(400);
  sprintf(response, "HTTP/1.1 %d\r\n"
                           "Content-Type: %s\r\n"
                           "Content-Length: %d\r\n"
                           "\r\n",
-            contentType,statusCode,size);
- printf(response);
+            statusCode,contentType,size);
+ 
  send(sock, response, strlen(response), 0);
  send(sock, data, size, 0);
 }

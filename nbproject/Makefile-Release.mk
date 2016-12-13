@@ -38,7 +38,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/Command.o \
 	${OBJECTDIR}/GETCommand.o \
 	${OBJECTDIR}/HelperFunction.o \
-	${OBJECTDIR}/OPTIONSCommand.o \
 	${OBJECTDIR}/POSTCommand.o \
 	${OBJECTDIR}/main.o
 
@@ -81,11 +80,6 @@ ${OBJECTDIR}/HelperFunction.o: HelperFunction.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/HelperFunction.o HelperFunction.cpp
-
-${OBJECTDIR}/OPTIONSCommand.o: OPTIONSCommand.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/OPTIONSCommand.o OPTIONSCommand.cpp
 
 ${OBJECTDIR}/POSTCommand.o: POSTCommand.cpp
 	${MKDIR} -p ${OBJECTDIR}
